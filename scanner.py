@@ -14,7 +14,10 @@ import json
 import re
 from pathlib import Path
 
-from .vulndb import lookup
+try:  # 作为 depscan 包被导入
+    from .vulndb import lookup
+except ImportError:  # 直接以脚本方式运行(仓库根即包体)
+    from vulndb import lookup
 
 # 版本修饰符收敛到裸版本（range 交集第一版从简：取锁/下限版本参与比对，未锁版本记 advisory 全量提示）
 _VER_RE = re.compile(r"(\d+(?:\.\d+){0,2})")

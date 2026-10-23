@@ -3,7 +3,7 @@
 One command to find poisoned / vulnerable packages in your project. No signup, no CI, no source code upload.
 
 ```
-python -m depscan ./myproject
+python dep-scan-cli.py ./myproject
 ```
 
 Supports: npm (package.json) · pip (requirements.txt) · Go (go.mod)
@@ -28,7 +28,7 @@ Only package names and versions are read. Your source code never leaves your mac
 ## Install & Test
 ```bash
 python -m unittest discover -s tests   # 11 tests
-python -m depscan tests/fixtures       # try the sample project
+python dep-scan-cli.py tests/fixtures       # try the sample project
 ```
 
 Seed vulnerability database included (daily refresh via OSSVuln planned). License: MIT.

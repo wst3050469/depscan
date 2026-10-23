@@ -3,9 +3,15 @@ import sys
 import unittest
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
-from depscan.scanner import parse_go, parse_npm, parse_pip, scan  # noqa: E402
-from depscan.vulndb import _in_range, lookup  # noqa: E402
+REPO_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(REPO_ROOT))
+sys.path.insert(0, str(REPO_ROOT.parent))  # 兼容包内用法(depscan.scanner)
+try:  # 仓库根即包体: 直接导入
+    from scanner import parse_go, parse_npm, parse_pip, scan  # noqa: E402
+    from vulndb import _in_range, lookup  # noqa: E402
+except ImportError:  # 作为 depscan 包安装/从父目录运行
+    from depscan.scanner import parse_go, parse_npm, parse_pip, scan  # noqa: E402
+    from depscan.vulndb import _in_range, lookup  # noqa: E402
 
 FIXTURES = Path(__file__).resolve().parent / "fixtures"
 

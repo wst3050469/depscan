@@ -2,8 +2,12 @@
 import sys
 from pathlib import Path
 
-from .report import render
-from .scanner import scan
+try:  # 仓库根即包体
+    from .report import render
+    from .scanner import scan
+except ImportError:  # 被当作脚本直接运行
+    from report import render
+    from scanner import scan
 
 
 def main() -> int:
