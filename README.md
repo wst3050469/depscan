@@ -33,4 +33,4 @@ python -m unittest discover -s tests   # 11 tests
 python dep-scan-cli.py tests/fixtures       # try the sample project
 ```
 
-Seed vulnerability database included (daily refresh via OSSVuln planned). License: MIT.
+Vulnerability database: 1,043 real records (736 PyPI / 267 npm / 40 Go, incl. supply-chain poisoning entries), refreshed weekly from the public OSV feed via `python refresh_db.py`. License: MIT.
