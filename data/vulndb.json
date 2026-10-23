@@ -1,0 +1,72 @@
+{
+  "_note": "DepScan 种子漏洞库(样例集, 非全量)。生产版每日拉 OSSVuln + 投毒公告刷新。版本范围语法: '<2.3.4' '>=1.0.0,<1.2.3' '*'(全版本)",
+  "npm": [
+    {
+      "name": "lodash",
+      "id": "CVE-2021-23337",
+      "title": "lodash 命令注入 (template)",
+      "severity": "high",
+      "affected": ">=4.0.0,<4.17.21",
+      "fix_version": "4.17.21",
+      "summary": "template 函数可被注入执行任意命令"
+    },
+    {
+      "name": "minimist",
+      "id": "CVE-2021-44906",
+      "title": "minimist 原型污染",
+      "severity": "high",
+      "affected": "<1.2.6",
+      "fix_version": "1.2.6",
+      "summary": "解析参数时污染 Object.prototype"
+    },
+    {
+      "name": "node-fetch",
+      "id": "CVE-2022-0235",
+      "title": "node-fetch Cookie 泄露",
+      "severity": "medium",
+      "affected": ">=2.0.0,<2.6.7",
+      "fix_version": "2.6.7",
+      "summary": "重定向到第三方时携带 Cookie 头"
+    }
+  ],
+  "pypi": [
+    {
+      "name": "litellm",
+      "id": "PYPI-2026-LITELLM",
+      "title": "LiteLLM PyPI 投毒事件 (供应链攻击)",
+      "severity": "critical",
+      "affected": ">=1.53.0,<1.53.2",
+      "fix_version": "1.53.2",
+      "summary": "官方 PyPI 版本被入侵，安装即植入凭据窃取器与后门，务必升级并轮换凭据"
+    },
+    {
+      "name": "requests",
+      "id": "CVE-2024-35195",
+      "title": "requests verify=False 跨会话泄漏",
+      "severity": "medium",
+      "affected": ">=2.0.0,<2.32.0",
+      "fix_version": "2.32.0",
+      "summary": "一次 verify=False 会关闭后续所有请求的证书校验"
+    },
+    {
+      "name": "pillow",
+      "id": "CVE-2023-50447",
+      "title": "Pillow ImageMath.eval 任意代码执行",
+      "severity": "high",
+      "affected": "<10.2.0",
+      "fix_version": "10.2.0",
+      "summary": "ImageMath.eval 可被利用执行任意代码"
+    }
+  ],
+  "go": [
+    {
+      "name": "golang.org/x/net",
+      "id": "CVE-2023-45288",
+      "title": "golang.org/x/net HTTP/2 快速重置 DoS",
+      "severity": "high",
+      "affected": "<0.23.0",
+      "fix_version": "0.23.0",
+      "summary": "HTTP/2 CONTINUATION 洪泛导致服务拒绝"
+    }
+  ]
+}
