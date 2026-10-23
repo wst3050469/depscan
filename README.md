@@ -2,6 +2,8 @@
 
 One command to find poisoned / vulnerable packages in your project. No signup, no CI, no source code upload.
 
+**Download (official site):** https://ad.lingjing.wang/depscan · 中文文档见 `docs/README_zh.md`
+
 ```
 python dep-scan-cli.py ./myproject
 ```
